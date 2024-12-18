@@ -5,7 +5,7 @@ import { experiences } from "@/utils/data/experience";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
 import AnimationLottie from "../../helper/animation-lottie";
-import GlowCard from "../../helper/glow-card";
+import DynamicGlowCard from "../../helper/glow-card";
 import experience from '/public/lottie/code.json';
 
 function Experience() {
@@ -48,7 +48,7 @@ function Experience() {
                     key={index}
                     className="sticky-card w-full sticky"
                   >
-                    <GlowCard
+                    <DynamicGlowCard
                       identifier={`experience-${experience.id}`}
                     >
                       <div className="p-3 relative">
@@ -85,7 +85,7 @@ function Experience() {
                           </div>
                         </div>
                       </div>
-                    </GlowCard>
+                    </DynamicGlowCard>
                   </div>
                 ))
               }
