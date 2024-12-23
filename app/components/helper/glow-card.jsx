@@ -1,5 +1,4 @@
 "use client"
-import dynamic from 'next/dynamic'
 import { useEffect } from 'react';
 
 const GlowCard = ({ children, identifier }) => {
@@ -83,10 +82,6 @@ const GlowCard = ({ children, identifier }) => {
   );
 };
 
-const DynamicGlowCard = dynamic(() => GlowCard, {
-  ssr: false
-})
-
-export default DynamicGlowCard
+export default GlowCard
 
 

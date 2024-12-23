@@ -1,12 +1,15 @@
 // @flow strict
 "use client";
 
+
 import { experiences } from "@/utils/data/experience";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
 import AnimationLottie from "../../helper/animation-lottie";
-import DynamicGlowCard from "../../helper/glow-card";
 import experience from '/public/lottie/code.json';
+import dynamic from "next/dynamic";
+
+const MyDynamicGlowCard = dynamic(() => import("../../helper/glow-card"));
 
 function Experience() {
   return (
@@ -48,7 +51,7 @@ function Experience() {
                     key={index}
                     className="sticky-card w-full sticky"
                   >
-                    <DynamicGlowCard
+                    <MyDynamicGlowCard
                       identifier={`experience-${experience.id}`}
                     >
                       <div className="p-3 relative">
@@ -85,7 +88,7 @@ function Experience() {
                           </div>
                         </div>
                       </div>
-                    </DynamicGlowCard>
+                    </MyDynamicGlowCard>
                   </div>
                 ))
               }

@@ -2,12 +2,16 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from 'next/dynamic';
+
+
 
 import { educations } from "@/utils/data/educations";
 import { BsPersonWorkspace } from "react-icons/bs";
 import AnimationLottie from "../../helper/animation-lottie";
-import DynamicGlowCard from "../../helper/glow-card";
 import lottieFile from '/public/lottie/study.json';
+
+const MyDynamicGlowCard = dynamic(() => import("../../helper/glow-card"));
 
 function Education() {
   return (
@@ -47,7 +51,7 @@ function Education() {
             <div className="flex flex-col gap-6">
               {
                 educations.map(education => (
-                  <DynamicGlowCard key={education.id} identifier={`education-${education.id}`}>
+                  <MyDynamicGlowCard key={education.id} identifier={`education-${education.id}`}>
                     <div className="p-3 relative text-white">
                       <Image
                         src="/blur-23.svg"
@@ -74,7 +78,7 @@ function Education() {
                         </div>
                       </div>
                     </div>
-                  </DynamicGlowCard>
+                  </MyDynamicGlowCard>
                 ))
               }
             </div>
