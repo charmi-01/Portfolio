@@ -9,7 +9,9 @@ import AnimationLottie from "../../helper/animation-lottie";
 import experience from '/public/lottie/code.json';
 import dynamic from "next/dynamic";
 
-const MyDynamicGlowCard = dynamic(() => import("../../helper/glow-card"));
+const MyDynamicGlowCard = dynamic(() => import("../../helper/glow-card"), {
+  ssr: false,
+});
 
 function Experience() {
   return (
