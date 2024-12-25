@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
+import dynamic from "next/dynamic";
 const inter = Inter({ subsets: ["latin"] });
 
 const ScrollToTopDynamic = dynamic(() => import("./components/helper/scroll-to-top"), {
