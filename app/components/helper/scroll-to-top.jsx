@@ -33,4 +33,8 @@ const ScrollToTop = () => {
   );
 };
 
-export default ScrollToTop;
+const ScrollToTopDynamic = dynamic(() => ScrollToTop, {
+  ssr: false,
+});
+
+export default ScrollToTopDynamic;
