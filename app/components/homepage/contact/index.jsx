@@ -1,5 +1,6 @@
-// @flow strict
+"use client";
 import { personalData } from '@/utils/data/personal-data';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { BiLogoLinkedin } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
