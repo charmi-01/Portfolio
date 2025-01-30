@@ -4,13 +4,16 @@
 import { experiences } from "@/utils/data/experience";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
-import AnimationLottie from "../../helper/animation-lottie";
 import experience from '/public/lottie/code.json';
 import dynamic from "next/dynamic";
 
-const MyDynamicGlowCard = dynamic(() => import("../../helper/glow-card"), {
+const DynamicAnimationLottie = dynamic(() => import("../../helper/animation-lottie"), {
   ssr: false,
 });
+
+const MyDynamicGlowCard = dynamic(() => import("../../helper/glow-card"), {
+  ssr: false,
+})
 
 function Experience() {
   return (
@@ -38,7 +41,7 @@ function Experience() {
           <div className="flex justify-center items-start">
             <div className="w-full h-full">
               <div className="sticky top-40">
-                <AnimationLottie animationPath={experience} />
+                <DynamicAnimationLottie animationPath={experience} />
               </div>
             </div>
           </div>
@@ -52,9 +55,7 @@ function Experience() {
                     key={index}
                     className="sticky-card w-full sticky"
                   >
-                    <MyDynamicGlowCard
-                      identifier={`experience-${experience.id}`}
-                    >
+                    <MyDynamicGlowCard>
                       <div className="p-3 relative">
                         <Image
                           src="/blur-23.svg"
